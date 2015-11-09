@@ -1,0 +1,48 @@
+{
+  "name": "Tick",
+  "plural": "ticks",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "species": {
+      "type": "string",
+      "required": true
+    },
+    "known_for": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "image_url": {
+      "type": "string",
+      "required": true
+    },
+    "created_at": {
+      "type": "datetime",
+      "required": true
+    },
+    "updated_at": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "observations": {
+      "type": "hasMany",
+      "model": "Observation",
+      "foreignKey": "fk_tick_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

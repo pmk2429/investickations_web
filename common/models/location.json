@@ -1,0 +1,51 @@
+{
+  "name": "Location",
+  "plural": "locations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "latitude": {
+      "type": "string",
+      "required": true
+    },
+    "longitude": {
+      "type": "string",
+      "required": true
+    },
+    "timestamp": {
+      "type": "string",
+      "required": true
+    },
+    "fk_user_id": {
+      "type": "string",
+      "required": true
+    },
+    "fk_activity_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "fk_user_id"
+    },
+    "activity": {
+      "type": "belongsTo",
+      "model": "Activity",
+      "foreignKey": "fk_location_id"
+    },
+    "observation": {
+      "type": "belongsTo",
+      "model": "Observation",
+      "foreignKey": "fk_observation_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,53 @@
+{
+  "name": "Activity",
+  "plural": "activities",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "num_of_people": {
+      "type": "number"
+    },
+    "num_of_pets": {
+      "type": "string"
+    },
+    "num_of_ticks": {
+      "type": "number"
+    },
+    "location_area": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "date",
+      "required": true
+    },
+    "created_at": {
+      "type": "date",
+      "required": true
+    },
+    "updated_at": {
+      "type": "string",
+      "required": true
+    },
+    "fk_user_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "fk_activity_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

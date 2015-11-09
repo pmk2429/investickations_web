@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "MYSQL": {
+    "host": "localhost",
+    "database": "db_investickation",
+    "username": "root",
+    "password": "mukrash",
+    "name": "MYSQL",
+    "connector": "mysql"
+  }
+}

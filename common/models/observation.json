@@ -1,0 +1,56 @@
+{
+  "name": "Observation",
+  "plural": "observations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "num_of_ticks": {
+      "type": "number",
+      "required": true
+    },
+    "tick_image": {
+      "type": "string",
+      "required": true
+    },
+    "timestamp": {
+      "type": "date",
+      "required": true
+    },
+    "fk_activity_id": {
+      "type": "string",
+      "required": true
+    },
+    "fk_tick_id": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tick": {
+      "type": "belongsTo",
+      "model": "Tick",
+      "foreignKey": "fk_tick_id"
+    },
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": "fk_observation_id"
+    },
+    "locations": {
+      "type": "hasOne",
+      "model": "Location",
+      "foreignKey": "fk_observation_id"
+    },
+    "activity": {
+      "type": "belongsTo",
+      "model": "Activity",
+      "foreignKey": "fk_observation_id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
